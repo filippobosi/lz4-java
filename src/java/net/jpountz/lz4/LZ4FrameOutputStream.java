@@ -24,7 +24,7 @@ import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;
-import java.util.BitSet;
+import v7backport.BitSet;
 import java.util.Locale;
 
 /**

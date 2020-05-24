@@ -122,7 +122,7 @@ public enum Native {
       tempLibLock = File.createTempFile("liblz4-java-", "." + os().libExtension + ".lck");
       tempLib = new File(tempLibLock.getAbsolutePath().replaceFirst(".lck$", ""));
       // copy to tempLib
-      try (FileOutputStream out = new FileOutputStream(tempLib)) {
+      FileOutputStream out = new FileOutputStream(tempLib); 
 	byte[] buf = new byte[4096];
 	while (true) {
 	  int read = is.read(buf);
@@ -130,7 +130,6 @@ public enum Native {
 	    break;
 	  }
 	  out.write(buf, 0, read);
-	}
       }
       System.load(tempLib.getAbsolutePath());
       loaded = true;
